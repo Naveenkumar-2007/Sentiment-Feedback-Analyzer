@@ -23,4 +23,6 @@ It predicts whether a given text review is **Positive 😀** or **Negative 😞*
 - **Uvicorn** (Server)
 
 ---
-
+## 📫 Connect With Me  
+- [GitHub](https://github.com/Naveenkumar-2007/)  
+- [LinkedIn](https://www.linkedin.com/in/naveen-kumar-chapala-69980533b/)
