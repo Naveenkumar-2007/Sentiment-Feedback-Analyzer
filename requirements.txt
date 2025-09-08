@@ -1,2 +1,9 @@
-streamlit
 fastapi
+uvicorn
+scikit-learn
+nltk
+beautifulsoup4
+lxml
+pandas
+numpy
+streamlit
