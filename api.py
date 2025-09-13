@@ -1,14 +1,18 @@
 from fastapi import FastAPI
-import pickle 
-from pydantic import BaseModel
+import pickle
+import re
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from bs4 import BeautifulSoup
+import nltk
+nltk.download('stopwords')
+nltk.download('wordnet')
+
 app=FastAPI()
 with open('predict/vector.pkl','rb') as f:
     vector=pickle.load(f)
 with open('predict/model.pkl','rb') as f:
     model=pickle.load(f)
-import nltk
-nltk.download('stopwords')
-nltk.download('wordnet')
 
 
 class Base_model(BaseModel):
