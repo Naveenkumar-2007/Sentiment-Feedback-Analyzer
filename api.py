@@ -6,6 +6,10 @@ with open('predict/vector.pkl','rb') as f:
     vector=pickle.load(f)
 with open('predict/model.pkl','rb') as f:
     model=pickle.load(f)
+import nltk
+nltk.download('stopwords')
+nltk.download('wordnet')
+
 
 class Base_model(BaseModel):
     reviewText:str
