@@ -1,9 +1,8 @@
 fastapi
 uvicorn
-scikit-learn
+scikit-learn=1.16.0
 nltk
 beautifulsoup4
 lxml
 pandas
 numpy
-
