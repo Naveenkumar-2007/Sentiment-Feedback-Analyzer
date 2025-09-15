@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import pickle
 import re
+from pydantic import BaseModel
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from bs4 import BeautifulSoup
