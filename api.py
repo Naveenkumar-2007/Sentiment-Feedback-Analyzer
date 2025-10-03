@@ -29,14 +29,19 @@ def clean_text(text):
     return text.strip()
 
 
+from fastapi import FastAPI, HTTPException
+
 @app.post('/predict')
-def prediction(item:Base_model):
-    review=clean_text([item.reviewText])
-    vector_pre=vector.transform([review])
-    model_pre=model.predict(vector_pre)
-    sentiment = "Positive 😀" if model_pre[0] == 1 else "Negative 😞"
-    return {
-        "review": item.reviewText,
-        "prediction": int(model_pre[0]),   
-        "sentiment": sentiment
-    }
+def prediction(item: Base_model):
+    try:
+        review = clean_text(item.reviewText)
+        vector_pre = vector.transform([review])
+        model_pre = model.predict(vector_pre)
+        sentiment = "Positive Review😀" if model_pre[0] == 1 else "Negative Review😞"
+        return {
+            "review": item.reviewText,
+            "prediction": int(model_pre[0]),   
+            "sentiment": sentiment
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
